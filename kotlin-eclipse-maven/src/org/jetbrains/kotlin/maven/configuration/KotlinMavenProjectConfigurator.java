@@ -22,7 +22,7 @@ public class KotlinMavenProjectConfigurator extends AbstractSourcesGenerationPro
 		if (hasKotlinMavenPlugin(request.getMavenProject())) {
 			classpath.addEntry(KotlinClasspathContainer.CONTAINER_ENTRY);
 			addNature(request.getProject(), KotlinNature.KOTLIN_NATURE, monitor);
-		}
+		} 
 	}
 
 	private boolean hasKotlinMavenPlugin(@NotNull MavenProject mavenProject) {
