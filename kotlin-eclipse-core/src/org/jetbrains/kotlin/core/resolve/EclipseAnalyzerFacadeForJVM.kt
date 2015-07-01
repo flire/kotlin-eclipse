@@ -40,7 +40,7 @@ import java.util.HashSet
 public object EclipseAnalyzerFacadeForJVM {
     public fun analyzeFilesWithJavaIntegration(javaProject: IJavaProject, project: Project, filesToAnalyze: Collection<JetFile>): AnalysisResult {
         val allFiles = LinkedHashSet<JetFile>(filesToAnalyze)
-        val addedFiles = filesToAnalyze.map { ::getPath }
+        val addedFiles = filesToAnalyze.map { getPath(it) }
         
         ProjectUtils.getSourceFilesWithDependencies(javaProject).filterNotTo(allFiles) {
             getPath(it) in addedFiles
