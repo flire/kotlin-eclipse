@@ -95,8 +95,10 @@ fun makeVisitor(element: IJavaElement, result: MutableList<JetElement>): JetVisi
 					visitExplicitDeclaration(constructor)
 				}
 			
-				override fun visitPrimaryConstructor(constructor: JetPrimaryConstructor) {
+//				Temporary hack, update it later
+				override fun visitPrimaryConstructor(constructor: JetPrimaryConstructor, data: Void?): Void? {
 					visitExplicitDeclaration(constructor)
+					return null
 				}
 			
 //				Check primary constructor when there are no secondary constructors
