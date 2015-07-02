@@ -1,5 +1,5 @@
-// NUMBER: 1
-
 import java.util.HashSet
+
+// NUMBER: 1
 
 fun test() = HashSet
