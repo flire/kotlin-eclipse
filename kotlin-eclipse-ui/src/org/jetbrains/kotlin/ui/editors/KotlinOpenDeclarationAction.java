@@ -163,11 +163,8 @@ public class KotlinOpenDeclarationAction extends SelectionDispatchAction {
         assert(jetFile != null);
         BindingContext context = KotlinAnalyzer.analyzeFile(javaProject, jetFile).getBindingContext();
         Collection<DeclarationDescriptor> descriptors = kotlinReference.getTargetDescriptors(context);
-        
-        if (descriptors.size() != 1) {
-            return;
-        }
-        
+
+        //TODO: popup if there's several descriptors to navigate to
         DeclarationDescriptor descriptor = descriptors.iterator().next();
         
         int offset = EditorsPackage.findDeclarationInParsedFile(descriptor, targetEditor.getParsedFile());
